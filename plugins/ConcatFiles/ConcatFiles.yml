@@ -1,0 +1,38 @@
+name: ConcatFiles
+description: Merge multiple files into one video using FFmpeg, then re-attaches the result to the original scene and cleans up the originals.
+version: "3.0"
+url: ""
+exec:
+  - python
+  - "{pluginDir}/ConcatFiles.py"
+interface: raw
+
+ui:
+  javascript:
+    - ConcatFiles.js
+
+settings:
+  outputLocation:
+    displayName: Output File Location
+    description: "Where to save the merged file: 'first' (same folder as first file), 'last' (same folder as last file), 'parent' (parent folder of first file), 'prompt' (ask each time)"
+    type: STRING
+  reEncode:
+    displayName: Re-encode if lossless fails
+    description: "If lossless concat fails (incompatible codecs/resolutions), fall back to re-encoding with libx264/aac."
+    type: BOOLEAN
+
+tasks:
+  - name: Merge Scene Files
+    description: Concatenate all files attached to a scene into one video using FFmpeg.
+    defaultArgs:
+      mode: merge
+  - name: Merge Folder Files
+    description: Concatenate all video files found in a folder into one video using FFmpeg.
+    defaultArgs:
+      mode: merge_folder
+
+hooks:
+  - name: ConcatFiles Post-Scan
+    description: Phase 2 of merge - assigns the merged file to the master scene after scan indexes it.
+    triggeredBy:
+      - Scene.Create.Post
