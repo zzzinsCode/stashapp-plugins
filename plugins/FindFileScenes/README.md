@@ -22,10 +22,10 @@ A [Stash](https://github.com/stashapp/stash) plugin that finds all Stash scenes 
    ```
 2. In Stash, go to **Settings → Plugins** and click **Reload Plugins**
 
-> **Windows note:** If your Python installation path contains spaces (e.g. `C:\Users\Adam Plant\...`), update the `exec` section of `FindFileScenes.yml` to use the full quoted path to your Python executable:
+> **Windows note:** If your Python installation path contains spaces (e.g. `C:\Users\ABC XYZ\...`), update the `exec` section of `FindFileScenes.yml` to use the full quoted path to your Python executable:
 > ```yaml
 > exec:
->   - "C:\\Users\\Adam Plant\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe"
+>   - "C:\\Users\\ABC XYZ\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe"
 >   - "{pluginDir}/FindFileScenes.py"
 > ```
 
