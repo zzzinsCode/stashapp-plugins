@@ -1,0 +1,8 @@
+name: DupeFinder
+description: Find duplicate scenes (same title/date/studio) and multi-file scenes in your Stash library.
+version: "1.0"
+url: ""
+
+ui:
+  javascript:
+    - DupeFinder.js

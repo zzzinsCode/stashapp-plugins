@@ -1,0 +1,30 @@
+name: SceneMover
+description: Move and rename scene files based on ordered rules (studio, favourite performer, tags) with per-root path templates. Updates Stash file paths after moving.
+version: "1.0"
+url: ""
+exec:
+  - python
+  - "{pluginDir}/SceneMover.py"
+interface: raw
+
+ui:
+  javascript:
+    - SceneMover.js
+
+tasks:
+  - name: Preview Moves
+    description: Dry run — show what would be moved without changing anything.
+    defaultArgs:
+      mode: preview
+  - name: Apply Moves
+    description: Move files and update Stash paths. Run Preview first.
+    defaultArgs:
+      mode: apply
+  - name: Get Config
+    description: Returns the current SceneMover.json config as JSON.
+    defaultArgs:
+      mode: get_config
+  - name: Save Config
+    description: Saves config JSON to SceneMover.json.
+    defaultArgs:
+      mode: save_config

@@ -1,0 +1,73 @@
+{
+  "roots": [
+    {
+      "id": "id_tstz25c",
+      "label": "Downloads",
+      "path": "H:\\Downloads",
+      "template": "{studioFirstLetter}\\{studio}\\{studio}.{date}.{performers}.{title}.{scene_id}.{height}.{codec}.{ext}",
+      "isDefault": true
+    },
+    {
+      "id": "id_cj9srb8",
+      "label": "FTVGirls",
+      "path": "I:\\FTVGirls",
+      "template": "{yyyy}\\{studio}.{date}.{performers}.{title}.{scene_id}.{height}.{codec}.{ext}",
+      "isDefault": false
+    },
+    {
+      "id": "id_2vi132d",
+      "label": "Models",
+      "path": "Z:\\_Models",
+      "template": "{favoritedPerformerInitial}\\{favoritedPerformer}\\{studio}.{date}.{performers}.{title}.{scene_id}.{height}.{codec}.{ext}",
+      "isDefault": false
+    },
+    {
+      "id": "id_qp25yw2",
+      "label": "Nubiles",
+      "path": "H:\\Downloads\\N\\Nubiles",
+      "template": "{yyyy}\\{studio}.{date}.{performers}.{title}.{scene_id}.{height}.{codec}.{ext}",
+      "isDefault": false
+    },
+    {
+      "id": "id_dfrr7kf",
+      "label": "ExCoGi",
+      "path": "i:\\ExploitedCollegeGirls",
+      "template": "{yyyy}\\{studio}.{date}.{performers}.{title}.{scene_id}.{height}.{codec}.{ext}",
+      "isDefault": false
+    }
+  ],
+  "rules": [
+    {
+      "id": "id_j7yt01t",
+      "label": "FTVG",
+      "condition": "studio_equals",
+      "value": "FTV Girls",
+      "rootId": "id_cj9srb8",
+      "enabled": true
+    },
+    {
+      "id": "id_7zoevbz",
+      "label": "Models",
+      "condition": "performer_is_favourite",
+      "value": "",
+      "rootId": "id_2vi132d",
+      "enabled": true
+    },
+    {
+      "id": "id_xqlovnb",
+      "label": "Nubiles",
+      "condition": "studio_equals",
+      "value": "Nubiles.net",
+      "rootId": "id_qp25yw2",
+      "enabled": true
+    },
+    {
+      "id": "id_65fbjf4",
+      "label": "ExCoGi",
+      "condition": "studio_equals",
+      "value": "Exploited College Girls",
+      "rootId": "id_dfrr7kf",
+      "enabled": true
+    }
+  ]
+}
